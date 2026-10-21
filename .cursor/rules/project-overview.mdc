@@ -1,0 +1,39 @@
+---
+description: Project goal, stack, pages, and incremental workflow for this portfolio site
+globs: ""
+alwaysApply: true
+---
+
+# Project Overview
+
+Personal portfolio website hosted on GitHub Pages.
+
+## Stack
+
+- Vite + React (JavaScript, not TypeScript)
+- Material UI (`@mui/material`, Emotion, `@mui/icons-material`, Roboto via `@fontsource/roboto`)
+- React Router with `HashRouter`
+- Styling: MUI only (`src/theme.js`, `sx` prop, MUI layout components) — no Tailwind or other CSS frameworks
+
+## Pages
+
+| Route | Page |
+|-------|------|
+| `/` | Home (Intro) |
+| `/skills` | Skills |
+| `/projects` | Projects |
+| `*` | NotFound |
+
+More pages may be added later when explicitly requested.
+
+## Workflow
+
+- Only do what the user asks in each prompt
+- Do not add extra pages, features, dependencies, or animations unprompted
+- Ask before making significant decisions
+- Prefer small, reviewable changes
+
+## Docs
+
+- At the start of a task, read `docs/PROJECT.md`
+- When a task completes or a decision is made, update `docs/ROADMAP.md` and the Decisions log in `docs/PROJECT.md`

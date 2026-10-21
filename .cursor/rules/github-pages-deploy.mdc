@@ -1,0 +1,27 @@
+---
+description: GitHub Pages hosting, HashRouter, Vite base path, and Actions deployment rules
+globs: vite.config.js,.github/**/*,README.md
+alwaysApply: false
+---
+
+# GitHub Pages Deploy
+
+## Routing
+
+- Always use `HashRouter` — never `BrowserRouter`
+- GitHub Pages has no server-side routing; hash routes avoid 404s on refresh/deep links
+
+## Vite base path
+
+- Keep `base` in `vite.config.js` set to `/<repo-name>/` (e.g. `/Portfolio/`)
+- Use relative or base-aware asset paths so builds work under the project subdirectory
+
+## Deployment
+
+- Deploy with the official GitHub Pages Actions workflow on push to `main`
+- Do not use the `gh-pages` branch or the `gh-pages` npm package
+
+## Safety
+
+- Never commit secrets or credentials
+- No server-side code — this is a static client-only site

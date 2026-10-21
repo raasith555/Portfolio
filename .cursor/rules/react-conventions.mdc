@@ -1,0 +1,36 @@
+---
+description: React component structure, file layout, comments, and accessibility conventions
+globs: src/**/*.jsx,src/**/*.js
+alwaysApply: false
+---
+
+# React Conventions
+
+## Components
+
+- Functional components and hooks only (no class components)
+- One component per file
+- PascalCase for component filenames (e.g. `ProjectCard.jsx`)
+- Keep components small and focused; extract when a file does too much
+
+## File layout
+
+| Location | Purpose |
+|----------|---------|
+| `src/pages/` | Page-level route components |
+| `src/components/` | Shared / reusable UI components |
+| `src/data/` | Content as plain arrays/objects |
+
+Never hardcode page content inside components — put it in `src/data/` and import it.
+
+## Comments and editable content
+
+- Comment non-obvious code
+- Mark user-editable content with `EDIT ME` so it is easy to find and change
+
+## Accessibility
+
+- Use semantic HTML (`main`, `nav`, `section`, headings in order)
+- Provide meaningful `alt` text for images
+- Support keyboard navigation
+- Keep focus states visible (do not remove outline without a clear replacement)
