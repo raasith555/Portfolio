@@ -1,0 +1,92 @@
+{
+  "links": {
+    "x": -550,
+    "y": -300,
+    "width": 260,
+    "height": 180
+  },
+  "project-1": {
+    "x": 885,
+    "y": 130,
+    "width": 220,
+    "height": 140
+  },
+  "project-2": {
+    "x": 885,
+    "y": 310,
+    "width": 220,
+    "height": 140
+  },
+  "project-3": {
+    "x": 885,
+    "y": 510,
+    "width": 220,
+    "height": 140
+  },
+  "projects": {
+    "x": 550,
+    "y": 300,
+    "width": 260,
+    "height": 180
+  },
+  "skill-1": {
+    "x": 890,
+    "y": -530,
+    "width": 220,
+    "height": 140
+  },
+  "skill-2": {
+    "x": 890,
+    "y": -300,
+    "width": 220,
+    "height": 140
+  },
+  "skill-3": {
+    "x": 890,
+    "y": -80,
+    "width": 220,
+    "height": 140
+  },
+  "skills": {
+    "x": 550,
+    "y": -300,
+    "width": 260,
+    "height": 180
+  },
+  "start": {
+    "x": 0,
+    "y": 0,
+    "width": 440,
+    "height": 340
+  },
+  "work-experience": {
+    "x": -550,
+    "y": 300,
+    "width": 280,
+    "height": 180
+  },
+  "work-experience-1": {
+    "x": -890,
+    "y": 80,
+    "width": 240,
+    "height": 140
+  },
+  "work-experience-2": {
+    "x": -950,
+    "y": 300,
+    "width": 240,
+    "height": 140
+  },
+  "work-experience-3": {
+    "x": -890,
+    "y": 520,
+    "width": 240,
+    "height": 140
+  },
+  "work-experience-4": {
+    "x": -555,
+    "y": 595,
+    "width": 280,
+    "height": 140
+  }
+}

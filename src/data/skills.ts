@@ -1,5 +1,10 @@
+export type Skill = {
+  id: number
+  name: string
+}
+
 // EDIT ME: Replace with your real skills
-export const skills = [
+export const skills: Skill[] = [
   { id: 1, name: 'JavaScript' },
   { id: 2, name: 'React' },
   { id: 3, name: 'HTML & CSS' },

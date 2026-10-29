@@ -10,9 +10,14 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 import theme from './theme'
-import App from './App.jsx'
+import App from './App'
 
-createRoot(document.getElementById('root')).render(
+const rootEl = document.getElementById('root')
+if (!rootEl) {
+  throw new Error('Root element #root not found')
+}
+
+createRoot(rootEl).render(
   <StrictMode>
     <HashRouter>
       <ThemeProvider theme={theme}>

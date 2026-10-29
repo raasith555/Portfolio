@@ -13,7 +13,7 @@ alwaysApply: false
 
 ## Vite base path
 
-- Keep `base` in `vite.config.js` set to `/<repo-name>/` (e.g. `/Portfolio/`)
+- Keep `base` in `vite.config.ts` set to `/<repo-name>/` (e.g. `/Portfolio/`)
 - Use relative or base-aware asset paths so builds work under the project subdirectory
 
 ## Deployment

@@ -16,8 +16,7 @@ function Footer() {
     >
       <Container maxWidth="md">
         <Typography variant="body2" color="text.secondary" align="center">
-          {/* EDIT ME: Update copyright name */}
-          © {year} Your Name. All rights reserved.
+          © {year} Mohamed Raasith. All rights reserved.
         </Typography>
       </Container>
     </Box>

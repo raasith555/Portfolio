@@ -1,5 +1,13 @@
+export type Project = {
+  id: number
+  title: string
+  description: string
+  tech: string[]
+  link: string
+}
+
 // EDIT ME: Replace with your real projects
-export const projects = [
+export const projects: Project[] = [
   {
     id: 1,
     title: 'Project One',

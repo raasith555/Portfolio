@@ -1,0 +1,68 @@
+---
+description: How to add PinUpBoard cards and branches under pinUpBoardData
+globs: src/data/pinUpBoardData/**/*
+alwaysApply: false
+---
+
+# PinUpBoard data (folder tree)
+
+Board content lives under `src/data/pinUpBoardData/`. The folder tree mirrors the mind-map. Connectors come from each card’s `parentId` via `registerBranch` — do not hand-edit connector lists unless necessary.
+
+## Layout
+
+```
+pinUpBoardData/
+  types.ts                 # BoardCardModule, registerBranch, helpers
+  index.ts                 # Assembles all branches → pinUpBoard
+  MainCenter/
+    MainCenterCard.tsx     # id: "start" (world origin, no parentId)
+    Skills/
+      SkillsCard.tsx       # hub
+      SkillsList/*Card.tsx # children
+      index.ts             # registerBranch(hub, children)
+    Projects/ …
+    Links/ …
+    WorkExperience/ …
+```
+
+## Adding a leaf card (common)
+
+1. Create `*Card.tsx` in the branch list folder (e.g. `WorkExperience/WorkExperienceList/WorkExperience4Card.tsx`).
+2. Export a `BoardCardModule`:
+   - Unique `id` (kebab-case, e.g. `work-experience-4`)
+   - `parentId` = hub id (e.g. `work-experience`)
+   - `x`, `y`, `width`, `height` (layout; use local edit mode to place, then paste values)
+   - `content` = JSX for the card body
+3. Import and append it in that branch’s `index.ts` child array.
+4. Mark editable copy with `EDIT ME`.
+
+Do **not** add leaf cards only in `pinUpBoardData/index.ts` — register them in the branch `index.ts`.
+
+## Adding a new branch / hub (common)
+
+1. Create folder under `MainCenter/`, e.g. `MainCenter/NewBranch/`.
+2. Add hub `NewBranchCard.tsx` with `parentId: 'start'` (or another hub if nested).
+3. Add list folder + leaf cards as needed.
+4. Add `index.ts` that `registerBranch(hub, [...children])`.
+5. Wire the branch in `pinUpBoardData/index.ts`: spread `...newBranch.cards` and `...newBranch.connectors`.
+
+## Card module contract
+
+```ts
+export const exampleCard: BoardCardModule = {
+  id: 'example',
+  parentId: 'start', // omit only for the start card
+  x: 0,
+  y: 0,
+  width: 260,
+  height: 180,
+  content: <… />,
+  // connectorLabel?: optional label on the edge from parent
+}
+```
+
+## Do not
+
+- Put board card content in `src/pages/Home.tsx`
+- Rely on auto-import of folder files — registration is always explicit
+- Commit `src/dev/local/` layout editor files (gitignored); only commit updated `*Card.tsx` layout numbers

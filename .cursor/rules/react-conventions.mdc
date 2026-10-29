@@ -1,6 +1,6 @@
 ---
 description: React component structure, file layout, comments, and accessibility conventions
-globs: src/**/*.jsx,src/**/*.js
+globs: src/**/*.tsx,src/**/*.ts,src/**/*.jsx,src/**/*.js
 alwaysApply: false
 ---
 
@@ -10,8 +10,9 @@ alwaysApply: false
 
 - Functional components and hooks only (no class components)
 - One component per file
-- PascalCase for component filenames (e.g. `ProjectCard.jsx`)
+- PascalCase for component filenames (e.g. `ProjectCard.tsx`)
 - Keep components small and focused; extract when a file does too much
+- Prefer TypeScript (`.ts` / `.tsx`) for all new and migrated source
 
 ## File layout
 
@@ -19,9 +20,18 @@ alwaysApply: false
 |----------|---------|
 | `src/pages/` | Page-level route components |
 | `src/components/` | Shared / reusable UI components |
+| `src/components/pinup/` | Home PinUpBoard engine (board, cards, connectors, coords) |
 | `src/data/` | Content as plain arrays/objects |
+| `src/data/pinUpBoardData/` | Home board cards: folder tree mirrors the mind-map; one `*Card.tsx` per node; parent `index.ts` explicitly registers children |
 
-Never hardcode page content inside components — put it in `src/data/` and import it.
+Never hardcode page content inside page components — put it in `src/data/` (or `pinUpBoardData` for board cards) and import it.
+
+### PinUpBoard cards
+
+Follow `.cursor/rules/pinup-board-data.mdc` when adding or changing board cards/branches.
+
+Quick leaf-card checklist: new `*Card.tsx` → export `BoardCardModule` → register in branch `index.ts`.  
+Quick new-branch checklist: hub + list folder + branch `index.ts` → wire into `pinUpBoardData/index.ts`.
 
 ## Comments and editable content
 

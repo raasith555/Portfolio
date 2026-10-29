@@ -7,8 +7,13 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import type { Project } from '../data/projects'
 
-function ProjectCard({ project }) {
+type ProjectCardProps = {
+  project: Project
+}
+
+function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card variant="outlined" sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <CardContent sx={{ flexGrow: 1 }}>

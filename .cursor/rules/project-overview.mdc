@@ -10,16 +10,16 @@ Personal portfolio website hosted on GitHub Pages.
 
 ## Stack
 
-- Vite + React (JavaScript, not TypeScript)
+- Vite + React + TypeScript
 - Material UI (`@mui/material`, Emotion, `@mui/icons-material`, Roboto via `@fontsource/roboto`)
 - React Router with `HashRouter`
-- Styling: MUI only (`src/theme.js`, `sx` prop, MUI layout components) — no Tailwind or other CSS frameworks
+- Styling: MUI only (`src/theme.ts`, `sx` prop, MUI layout components) — no Tailwind or other CSS frameworks
 
 ## Pages
 
 | Route | Page |
 |-------|------|
-| `/` | Home (Intro) |
+| `/` | Home (PinUpBoard intro + linked preview cards) |
 | `/skills` | Skills |
 | `/projects` | Projects |
 | `*` | NotFound |
